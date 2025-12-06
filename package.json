@@ -1,0 +1,71 @@
+{
+  "name": "genz-debug",
+  "displayName": "GenZ Debug",
+  "description": "Turn boring runtime errors into savage Gen Z roasts 💀",
+  "version": "0.0.1",
+  "publisher": "your-publisher-name",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Debuggers",
+    "Other"
+  ],
+  "keywords": [
+    "debug",
+    "genz",
+    "funny",
+    "errors",
+    "roast"
+  ],
+  "activationEvents": [
+    "onLanguage:javascript",
+    "onLanguage:typescript",
+    "onLanguage:python"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "GenZ Debug",
+      "properties": {
+        "genzDebug.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable GenZ Debug roasts"
+        },
+        "genzDebug.savageMode": {
+          "type": "string",
+          "default": "savage",
+          "enum": ["mild", "savage", "nuclear"],
+          "description": "How brutal should the roasts be?"
+        },
+        "genzDebug.enableEmojis": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show emojis in error messages"
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "genzDebug.toggleRoasts",
+        "title": "GenZ Debug: Toggle Roasts"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.85.0",
+    "@types/node": "18.x",
+    "@typescript-eslint/eslint-plugin": "^6.13.0",
+    "@typescript-eslint/parser": "^6.13.0",
+    "eslint": "^8.54.0",
+    "typescript": "^5.3.2"
+  }
+}
