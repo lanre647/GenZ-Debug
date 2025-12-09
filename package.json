@@ -36,7 +36,11 @@
         "genzDebug.savageMode": {
           "type": "string",
           "default": "savage",
-          "enum": ["mild", "savage", "nuclear"],
+          "enum": [
+            "mild",
+            "savage",
+            "nuclear"
+          ],
           "description": "How brutal should the roasts be?"
         },
         "genzDebug.enableEmojis": {
@@ -50,6 +54,10 @@
       {
         "command": "genzDebug.toggleRoasts",
         "title": "GenZ Debug: Toggle Roasts"
+      },
+      {
+        "command": "genzDebug.changeSavageLevel",
+        "title": "GenZ Debug: Change Savage Level"
       }
     ]
   },
